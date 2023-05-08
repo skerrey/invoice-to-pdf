@@ -1,0 +1,186 @@
+/* Styling */
+
+/* Elements */
+body {
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+input, textarea {
+  border: 0;
+}
+
+tr, td, th{
+  padding: 0 !important;
+}
+
+/* Text */
+.text-sm {
+  font-size: 12px;
+}
+
+.text-lg {
+  font-size: 16px;
+}
+
+.color-bold {
+  color: #2281c0;
+  font-weight: bold;
+}
+
+.tc {
+  text-align: center;
+}
+
+.ts {
+  text-align: left;
+}
+
+.te {
+  text-align: right;
+}
+
+/* General */
+.container {
+  margin: 20px auto 50px auto;
+}
+
+.card {
+  width: 816px;
+  height: 1056px;
+  box-shadow: #ced4da 0px 0px 10px 0px;
+}
+
+.bar-bg {
+  height: 20px;
+  background-color: #7fcccc;
+}
+
+/* Company Details  */
+
+#logo:hover {
+  cursor: pointer;
+}
+
+.company-details {
+  height: 200px;
+  background-color: #f5f5f5;
+}
+
+.cd-input {
+  background-color: #f5f5f5;
+}
+
+/* Billing Details */
+.billing-details {
+  margin: 20px 20px 0 20px;
+}
+
+.bd-input {
+  padding-left: 0;
+}
+
+/* Payment Description */
+.payment-description {
+  margin: 20px 20px 0 20px;
+}
+
+.pd-input {
+  background-color: #f2f2f2;
+  width: 100%;
+}
+
+.th-description {
+  width: 45%;
+}
+
+.th-qty {
+  width: 10%;
+}
+
+.th-unit {
+  width: 20%;
+}
+
+.th-total {
+  width: 25%;
+}
+
+/* Payment Total */
+.payment-total {
+  margin: 20px 20px 0 20px;
+}
+
+/* Controls */
+#controls {
+  background-color: #fff;
+  border-radius: 2%;
+  padding: 15px;
+  position: fixed;
+  box-shadow: #ced4da 0px 0px 10px 0px;
+}
+
+
+.btn-color-picker {
+  width: 89px;
+  height: 38px;
+  padding: 6px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+
+.btn-custom {
+	display: flex;
+	height: 40px;
+	padding: 0;
+	background: #009578;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	overflow: hidden;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.btn-custom:hover {
+	background: #008168;
+}
+
+.btn-custom:active {
+	background: #006e58;
+}
+
+.button__text,
+.button__icon {
+	display: inline-flex;
+	align-items: center;
+	padding: 0 16px;
+	color: #fff;
+	height: 100%;
+}
+
+.button__icon {
+	font-size: 1.5em;
+	background: rgba(0, 0, 0, 0.08);
+}
+
+.btn-control {
+  background-color:rgb(157, 235, 255);
+}
+
+.btn-control:hover {
+  background-color:rgb(135, 204, 221);
+}
+
+.btn-reset {
+  background-color:rgb(255, 157, 157);
+}
+
+.btn-reset:hover {
+  background-color:rgb(221, 135, 135);
+}
