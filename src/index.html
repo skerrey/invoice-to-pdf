@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML to PDF</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+
+ </script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Generate PDF Invoice from Template</h1>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <div class="card">
+          <div class="card-body" id="invoice">
+
+            <div class="company-details">
+              <div class="bar-bg"></div>
+              <div class="row m-3">
+                <div class="col">
+                  <div class="d-flex">
+                    <label for="image-input">
+                      <input 
+                        id="image-input" 
+                        type="file" 
+                        name="image-input" 
+                        style="display:none;"
+                        onchange="imgChange()"
+                        accept="image/jpeg, image/png"
+                      />
+                      <img id="logo" src="images/logo.png" height="60"/>
+                    </label>
+                    <div class="ms-3">
+                      <input class="cd-input" type="text" placeholder="<Your company name>" />
+                      <input class="cd-input text-sm" type="text" placeholder="<City, State>" />
+                      <input class="cd-input text-sm" type="text" placeholder="<Email>" />
+                      <input class="cd-input text-sm" type="text" placeholder="<Phone>" />  
+                    </div>
+                  </div>
+                </div>
+                <div class="col text-center mt-5">
+                  <h4>INVOICE</h4>
+                  <div class="mt-2">
+                    <input class="cd-input text-sm fw-bold text-center" type="text" placeholder="DATE" />
+                    <hr class="w-75 mx-auto mt-0">
+                    <input class="cd-input text-sm fw-bold text-center" type="text" placeholder="INVOICE NO." />  
+                    <hr class="w-75 mx-auto mt-0">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="billing-details">
+              <div class="row">
+                <div class="col-5">
+                  <div class="text-sm color-bold">BILL TO</div>
+                  <hr class="my-1 p-0">
+                  <div>
+                    <input class="bd-input" type="text" placeholder="<Client Name>" />
+                    <input class="bd-input" type="text" placeholder="<Client Company>" />
+                    <input class="bd-input" type="text" placeholder="<Address>" />
+                    <input class="bd-input" type="text" placeholder="<Phone>" />
+                    <input class="bd-input" type="text" placeholder="<Email>" />
+                  </div>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-5">
+                  <div class="text-sm color-bold">SHIP TO</div>
+                  <hr class="my-1 p-0">
+                  <div>
+                    <input class="bd-input" type="text" placeholder="<Name / Dept>" />
+                    <input class="bd-input" type="text" placeholder="<Client Company Name>" />
+                    <input class="bd-input" type="text" placeholder="<Address>" />
+                    <input class="bd-input" type="text" placeholder="<Phone>" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="payment-description">
+              <table class="table table-striped table-bordered">
+                <thead class="bar-bg">
+                  <tr class="tc">
+                    <th scope="col" class="inverse th-description">DESCRIPTION</th>
+                    <th scope="col" class="inverse th-qty">QTY</th>
+                    <th scope="col" class="inverse th-unit">UNIT PRICE</th>
+                    <th scope="col" class="inverse th-total">TOTAL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="tc">
+                    <th scope="row"><input class="pd-input" type="text" /></th>
+                    <td class="p-0"><input class="pd-input tc" type="text" /></td>
+                    <td><input class="pd-input tc" type="text" /></td>
+                    <td class="amount"><input class="pd-input ts" type="text" /></td>
+                  </tr>
+                  <tr class="tc">
+                    <th scope="row"><input class="w-100 bg-white" type="text" /></th>
+                    <td><input class="w-100 bg-white tc" type="text" /></td>
+                    <td><input class="w-100 bg-white tc" type="text" /></td>
+                    <td class="amount"><input class="w-100 bg-white ts" type="text" /></td>
+                  </tr>
+                  <tr class="tc">
+                    <th scope="row"><input class="pd-input" type="text" /></th>
+                    <td><input class="pd-input tc" type="text" /></td>
+                    <td><input class="pd-input tc" type="text" /></td>
+                    <td class="amount"><input class="pd-input ts" type="text" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="payment-total">
+              <div class="row">
+                <div class="col-6">
+                  <div>Remarks / Payment Instructions:</div>
+                  <div><textarea class="pt-input" name="" id="" cols="40" rows="5" placeholder="N/A"></textarea></div>
+                </div>
+                <div class="col color-bold te">
+                  <div class="text-sm">SUBTOTAL</div>
+                  <hr class="mt-0">
+                  <div class="text-sm">TAX RATE</div>
+                  <hr class="mt-0">
+                  <div class="text-sm">TAX TOTAL</div>
+                  <hr class="mt-0">
+                  <div class="text-lg">BALANCE DUE</div>
+                  <hr class="mt-0">
+                </div>
+                <div class="col fw-bold te">
+                  <div id="subtotal" class="text-sm">0.00</div>
+                  <hr class="mt-0">
+                  <div class="text-sm d-inline-block">
+                    <input id="tax-rate" class="w-100 te" type="text" placeholder="0.00" />
+
+                  </div>
+                  <hr class="mt-0">
+                  <div id="tax-total" class="text-sm"></div>
+                  <hr class="mt-0">
+                  <div class="text-lg" style="background-color: rgb(156, 245, 196)">
+                    <div id="total">0.00</div>
+                    <hr class="mt-0">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="bar-bg mt-5"></div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <div id="controls">
+          <h4 class="tc">Controls</h4>
+          <h6>Colors</h6>
+          <hr class="mt-0">
+          <div class="d-flex justify-content-center mb-3">
+            <input class="btn-color-picker" type="color" id="color-picker" value="#7fcccc">
+            <button class="btn btn-light ms-2" onclick="inverseTableHeaders()">Inverse Text</button>
+          </div>
+
+          <h6>Rows</h6>
+          <hr class="mt-0">
+          <div class="mb-3">
+            <button class="btn btn-light" onclick="addRow()">Add Row</button>
+            <button class="btn btn-light ms-2" onclick="removeRow()">Remove Row</button>
+          </div>
+
+          <h6>Clear</h6>
+          <hr class="mt-0">
+          <div class="mb-3">
+            <button class="btn btn-light" onclick="resetLogo()">Clear Logo</button>
+            <button class="btn btn-reset ms-2" onclick="location.reload()">Reset PDF!</button>
+          </div>
+          
+          <h6>Download</h6>
+          <hr class="mt-0">
+          <div>
+            <button class="btn-custom" onclick="generatePDF()">
+              <span class="button__icon">
+                <i class="fa-solid fa-download"></i>
+              </span>
+              <span class="button__text">Download PDF</span>
+            </button>
+          </div>
+
+          
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../node_modules/html2pdf.js/dist/html2pdf.bundle.min.js"></script>
+<script src="scripts/scripts.js"></script>
+</body>
+</html>
