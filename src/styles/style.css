@@ -56,7 +56,7 @@ tr, td, th{
 
 .bar-bg {
   height: 20px;
-  background-color: #7fcccc;
+  background-color: #4bb7e4;
 }
 
 /* Company Details  */
@@ -133,12 +133,11 @@ tr, td, th{
   background-color: #ffffff;
 }
 
-
 .btn-custom {
 	display: flex;
 	height: 40px;
 	padding: 0;
-	background: #009578;
+	background: #0d9dc9;
 	border: none;
 	outline: none;
 	border-radius: 5px;
@@ -148,11 +147,11 @@ tr, td, th{
 }
 
 .btn-custom:hover {
-	background: #008168;
+  background-color: #0e93bb;
 }
 
 .btn-custom:active {
-	background: #006e58;
+	background: #0b7da0;
 }
 
 .button__text,
@@ -183,4 +182,14 @@ tr, td, th{
 
 .btn-reset:hover {
   background-color:rgb(221, 135, 135);
+}
+
+/* Footer */
+#footer {
+  text-align: center;
+  margin: 30px 0;
+}
+
+#footer a {
+  text-decoration: none;
 }
