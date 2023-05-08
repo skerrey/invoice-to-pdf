@@ -159,3 +159,20 @@ function removeRow() {
   updateTotal();
 }
 
+/**
+ * Zoom buttons
+ */
+
+var currentZoom = 100; // current zoom level in percentage
+var increment = 10; // zoom increment in percentage
+
+function zoomIn() {
+  currentZoom += increment;
+  document.body.style.zoom = currentZoom + "%";
+}
+
+function zoomOut() {
+  currentZoom -= increment;
+  document.body.style.zoom = currentZoom + "%";
+}
+
