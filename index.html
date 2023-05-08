@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML to PDF</title>
   <link rel="icon" href="./images/favicon.png">
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
-  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/solid.min.css">
-  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/regular.min.css">
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/solid.min.css">
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/regular.min.css">
+  <link rel="stylesheet" href="./src/styles/style.css">
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script>
 
  </script>
@@ -21,7 +22,7 @@
   <div class="container">
     <h2 class="text-center">
       Generate PDF Invoice from Template
-      <img src="images/site-logo.png" alt="site-logo" height="50" class="mb-3">
+      <img src="./src/images/site-logo.png" alt="site-logo" height="50" class="mb-3">
     </h2>
     <div class="row justify-content-center row-min">
       <div class="col-auto">
@@ -43,7 +44,7 @@
                         onchange="imgChange()"
                         accept="image/jpeg, image/png"
                       />
-                      <img id="logo" src="images/logo.png" height="60"/>
+                      <img id="logo" src="./src/images/logo.png" height="60"/>
                     </label>
                     <div class="ms-3">
                       <input class="cd-input" type="text" placeholder="<Your company name>" />
@@ -201,8 +202,8 @@
                     <h6>Zoom</h6>
                     <hr class="mt-0">
                     <div class="d-flex justify-content-around mb-3 mx-4">
-                      <button class="btn p-0" onclick="zoomIn()"><img src="images/plus.png" alt="magnify-plus" height="35"></button>
-                      <button class="btn p-0" onclick="zoomOut()"><img src="images/min.png" alt="magnify-min" height="35"></button>
+                      <button class="btn p-0" onclick="zoomIn()"><img src="./src/images/plus.png" alt="magnify-plus" height="35"></button>
+                      <button class="btn p-0" onclick="zoomOut()"><img src="./src/images/min.png" alt="magnify-min" height="35"></button>
                     </div>
           
                     <h6>Colors</h6>
@@ -251,7 +252,7 @@
           <i class="fa-solid fa-code fa-xl p-1"></i>
         </a>
         <a href="https://sethkerrey.com/" target="_blank">
-          <img src="images/logo_512x512.png" alt="personal-logo" height="35" class="m-1">
+          <img src="./src/images/logo_512x512.png" alt="personal-logo" height="35" class="m-1">
         </a>
       </div>
 
@@ -259,8 +260,8 @@
 
   </div>
 
-<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../node_modules/html2pdf.js/dist/html2pdf.bundle.min.js"></script>
-<script src="scripts/scripts.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./node_modules/html2pdf.js/dist/html2pdf.bundle.min.js"></script>
+<script src="./src/scripts/scripts.js"></script>
 </body>
 </html>
