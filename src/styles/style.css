@@ -1,4 +1,17 @@
 /* Styling */
+/**
+  * ---Contents---
+  * Elements
+  * Text
+  * General
+  * Information
+  * Company Details
+  * Billing Details
+  * Payment Description
+  * Payment Total
+  * Controls
+  * Footer
+  */
 
 /* Elements */
 body {
@@ -48,10 +61,15 @@ tr, td, th{
   margin: 20px auto 50px auto;
 }
 
+.sticky-top { 
+  top: 2em; 
+}
+
 .card-pdf {
   width: 816px;
   height: 1056px;
   box-shadow: #ced4da 0px 0px 10px 0px;
+  margin-bottom: 20px;
 }
 
 .bar-bg {
@@ -63,11 +81,34 @@ tr, td, th{
 #info {
   background-color: #fff;
   border: 1px solid #ced4da;
-  border-radius: 2%;
+  border-radius: 4%;
   padding: 15px;
   box-shadow: #ced4da 0px 0px 10px 0px;
-
+  width: 420px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 16px;
+  background-color: rgb(173, 247, 205);
+  position: relative;
 }
+
+.x-button {
+  font-size: 12px;
+  position:absolute;
+  margin-top: -10px;
+  margin-right: -10px;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-weight: bold;
+  padding: 0;
+  top:0;
+  right:0;
+}
+
+
 
 /* Company Details  */
 #logo:hover {
@@ -126,12 +167,12 @@ tr, td, th{
 /* Controls */
 #controls {
   background-color: #fff;
-  border-radius: 2%;
+  border-radius: 4%;
   padding: 15px;
   border: 1px solid #ced4da;
   box-shadow: #ced4da 0px 0px 10px 0px;
+  min-width: 180px;
 }
-
 
 .btn-color-picker {
   width: 89px;
