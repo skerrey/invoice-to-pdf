@@ -12,24 +12,26 @@
   <script src="./src/scripts/jquery.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h2 class="text-center">
+  <div class="container-fluid">
+    <h2 class="text-center pt-2">
       Generate PDF Invoice from Template
       <img src="./src/images/site-logo.png" alt="site-logo" height="50" class="mb-3">
     </h2>
-    <div class="row justify-content-center row-min">
-
-      <div class="col">
-        <div id="info" class="card sticky-top">
-          <div class="p-2 text-lg" style="width:210px;height:150px;">
-            <strong>Get started by. . .</strong> clicking any of the text on the PDF. 
-            <hr>
-            You can edit the text and add your own logo.
-          </div>
-        </div>
+    <div id="info">
+      <div>
+        <strong>Get started by. . .</strong>clicking any of the text on the PDF. 
       </div>
+      <div>
+        You can edit <i>most</i> of the text and add your own logo.
+      </div>
+      <div>
+        <button class="btn-close x-button" type="button" onclick="closeInfo()"></button>
+      </div>
+    </div>
+    <hr class="w-100 mx-auto">
+    <div class="row justify-content-center">
 
-      <div class="col">
+      <div class="col-auto">
         <div class="card card-pdf">
           <div class="card-body" id="invoice">
 
@@ -173,7 +175,7 @@
       </div>
 
       <!-- Controls -->
-      <div class="col">
+      <div class="col-3">
         <div id="controls" class="sticky-top">
 
           <div class="mb-3">
@@ -205,29 +207,31 @@
                   <div>
                     <h6>Zoom</h6>
                     <hr class="mt-0">
-                    <div class="mb-3 mx-4">
-                      <button class="btn p-0" onclick="zoomIn()"><img src="./src/images/plus.png" alt="magnify-plus" height="35"></button>
+                    <div class="d-flex mb-3 mx-auto">
+                      <button class="btn p-0 me-2" onclick="zoomIn()"><img src="./src/images/plus.png" alt="magnify-plus" height="35"></button>
                       <button class="btn p-0" onclick="zoomOut()"><img src="./src/images/min.png" alt="magnify-min" height="35"></button>
                     </div>
           
                     <h6>Colors</h6>
                     <hr class="mt-0">
-                    <div class="mb-3">
-                      <input class="btn-color-picker mb-2" type="color" id="color-picker" value="#4bb7e4">
+                    <div class="d-flex mb-3">
+                      <div class="me-2">
+                        <input class="btn-color-picker" type="color" id="color-picker" value="#4bb7e4">
+                      </div>
                       <button class="btn btn-light" onclick="inverseTableHeaders()">Inverse Text</button>
                     </div>
           
                     <h6>Rows</h6>
                     <hr class="mt-0">
-                    <div class="mb-3">
-                      <button class="btn btn-light mb-2" onclick="addRow()">Add Row</button>
+                    <div class="d-flex mb-3">
+                      <button class="btn btn-light me-2" onclick="addRow()">Add Row</button>
                       <button class="btn btn-light" onclick="removeRow()">Remove Row</button>
                     </div>
           
                     <h6>Clear</h6>
                     <hr class="mt-0">
-                    <div class="mb-3">
-                      <button class="btn btn-light mb-2" onclick="resetLogo()">Clear Logo</button>
+                    <div class="d-flex mb-3">
+                      <button class="btn btn-light me-2" onclick="resetLogo()">Clear Logo</button>
                       <button class="btn btn-reset" onclick="location.reload()">Reset PDF</button>
                     </div>
       
