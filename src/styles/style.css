@@ -48,7 +48,7 @@ tr, td, th{
   margin: 20px auto 50px auto;
 }
 
-.card {
+.card-pdf {
   width: 816px;
   height: 1056px;
   box-shadow: #ced4da 0px 0px 10px 0px;
@@ -59,8 +59,17 @@ tr, td, th{
   background-color: #4bb7e4;
 }
 
-/* Company Details  */
+/* Information */
+#info {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 2%;
+  padding: 15px;
+  box-shadow: #ced4da 0px 0px 10px 0px;
 
+}
+
+/* Company Details  */
 #logo:hover {
   cursor: pointer;
 }
@@ -119,7 +128,7 @@ tr, td, th{
   background-color: #fff;
   border-radius: 2%;
   padding: 15px;
-  position: fixed;
+  border: 1px solid #ced4da;
   box-shadow: #ced4da 0px 0px 10px 0px;
 }
 
