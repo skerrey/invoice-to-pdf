@@ -184,3 +184,13 @@ function zoomOut() {
   document.body.style.zoom = currentZoom + "%";
 }
 
+/**
+ * Clear the logo
+ */
+function resetLogo() {
+  var logo = document.getElementById("logo");
+  var imgInput = document.getElementById("image-input");
+
+  imgInput.value = "";
+  logo.src = "./src/images/logo.png";
+}
